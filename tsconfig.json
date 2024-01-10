@@ -21,7 +21,8 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Other */
-    "types": ["node"],
+    "esModuleInterop": true,
+    "types": ["node", "@testing-library/jest-dom", "vitest/globals"],
     "paths": {
       "@/*": ["./src/*"]
     }

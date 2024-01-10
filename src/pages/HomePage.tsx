@@ -1,11 +1,16 @@
-import Logo from '../assets/logo-hostfully.svg?react';
+import PropertyList from '@/components/PropertyList/PropertyList';
+import Page from '@/components/Page/Page';
+import DateRange from '@/components/DateRange/DateRange';
 
-const HomePage = () => (
-  <div className="dark flex h-screen w-full flex-col items-center justify-center text-center text-3xl font-bold">
-    <div className="mb-5 w-80 leading-none">
-      <Logo />
-    </div>
-  </div>
-);
+const HomePage = () => {
+  return (
+    <Page>
+      <div className="mb-4">
+        <DateRange />
+      </div>
+      <PropertyList />
+    </Page>
+  );
+};
 
 export default HomePage;
