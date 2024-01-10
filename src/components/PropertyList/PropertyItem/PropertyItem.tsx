@@ -8,7 +8,7 @@ const PropertyItem: React.FC<Props> = ({ property }) => {
   return (
     <div
       key={property.id}
-      className="group relative overflow-hidden rounded-3xl border bg-gray-200 pb-12 text-sm shadow-lg transition duration-300 ease-in-out hover:shadow-xl"
+      className="group relative overflow-hidden rounded-3xl bg-gray-200 pb-12 text-sm shadow-lg transition duration-300 ease-in-out hover:shadow-xl dark:bg-gray-800"
     >
       <div className="h-48 overflow-hidden">
         <div

@@ -6,7 +6,7 @@ class PropertyService {
     return new Promise<Property[]>(resolve => {
       setTimeout(() => {
         resolve(properties);
-      });
+      }, 10000);
     });
   }
 }
