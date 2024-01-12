@@ -7,7 +7,13 @@ import BookingListPage from '@/pages/BookingListPage';
 import IndexPage from '@/pages/HomePage.tsx';
 import '@/globals.css';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+});
 
 const router = createBrowserRouter([
   {

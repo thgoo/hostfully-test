@@ -8,14 +8,15 @@ describe('PropertyItem', () => {
     name: 'Test Property',
     description: 'This is a test property.',
     price: 100,
+    isBooked: false,
   };
 
   it('renders without crashing', () => {
-    render(<PropertyItem property={property} />);
+    render(<PropertyItem property={property} onClick={() => null} />);
   });
 
   it('displays property details', () => {
-    render(<PropertyItem property={property} />);
+    render(<PropertyItem property={property} onClick={() => null} />);
 
     const imageElement = screen.getByRole('img');
     expect(imageElement).toHaveStyle(
@@ -34,9 +35,10 @@ describe('PropertyItem', () => {
       name: 'Test Property',
       description: 'This is a test property.',
       price: 100.0,
+      isBooked: false,
     };
 
-    render(<PropertyItem property={property} />);
+    render(<PropertyItem property={property} onClick={() => null} />);
 
     const imageElement = screen.getByRole('img');
     expect(imageElement).toHaveStyle(

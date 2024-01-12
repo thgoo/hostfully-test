@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import PropertyService from '@/services/PropertyService';
 import useBookingStore from '@/store/booking';
 import { Booking } from '@/types';
-import { checkIfDateRangesOverlap } from '@/validators/date';
+import { isDateRangeOverlapping } from '@/validators/date';
 import moment from 'moment';
 
 const fetchProperties = async (
@@ -27,7 +27,7 @@ const fetchProperties = async (
       const startDate = moment(filterBy.startDate).toDate();
       const endDate = moment(filterBy.endDate).toDate();
 
-      return checkIfDateRangesOverlap(
+      return isDateRangeOverlapping(
         bookingStartDate,
         bookingEndDate,
         startDate,

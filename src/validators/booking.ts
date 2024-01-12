@@ -1,6 +1,6 @@
 import { Booking, Property } from '@/types';
 import { DateValueType } from 'react-tailwindcss-datepicker';
-import { checkIfDateRangesOverlap } from './date';
+import { isDateRangeOverlapping } from './date';
 
 export function isPropertyAvailable(
   property: Property,
@@ -17,7 +17,7 @@ export function isPropertyAvailable(
     const startDate = dateRange?.startDate as Date;
     const endDate = dateRange?.endDate as Date;
 
-    return checkIfDateRangesOverlap(
+    return isDateRangeOverlapping(
       bookingStartDate,
       bookingEndDate,
       startDate,

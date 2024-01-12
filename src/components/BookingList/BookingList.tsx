@@ -1,42 +1,19 @@
 import useBookingStore from '@/store/booking';
 import { useQuery } from '@tanstack/react-query';
-import PropertyService from '@/services/PropertyService';
-import { Booking, Property } from '@/types';
 import Alert from '@/components/Alert/Alert';
 import BookingItem from '@/components/BookingList/BookingItem';
-import BookingItemSkeleton from './BookingItemSkeleton';
-import moment from 'moment';
-
-const fetchBookingsWithProperties = async (bookings: Booking[]) => {
-  const propertyService = new PropertyService();
-  const properties = await Promise.all(
-    bookings.map(booking =>
-      propertyService.getPropertyById(booking.propertyId),
-    ),
-  );
-
-  return bookings.map(booking => ({
-    ...booking,
-    start: moment(booking.start).toDate(),
-    end: moment(booking.end).toDate(),
-    nights: Math.ceil(
-      (moment(booking.end).unix() - moment(booking.start).unix()) / (3600 * 24),
-    ),
-    property: properties.find(
-      property => property.id === booking.propertyId,
-    ) as Property,
-  }));
-};
+import BookingItemSkeleton from '@/components/BookingList/BookingItemSkeleton';
+import { fetchBookingsWithProperties } from '@/components/BookingList/bookingUtils';
 
 const BookingList = () => {
   const { bookings } = useBookingStore();
   const { data, isLoading, error } = useQuery({
     queryKey: [
       'booking-with-properties',
-      bookings,
+      ...bookings,
       ...bookings.map(booking => booking.propertyId),
     ],
-    queryFn: async () => fetchBookingsWithProperties(bookings),
+    queryFn: () => fetchBookingsWithProperties(bookings),
   });
 
   if (error) return <Alert type="error" title="Oops" message={error.message} />;
