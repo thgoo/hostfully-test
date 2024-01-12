@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import PropertyItem from '@/components/PropertyList/PropertyItem/PropertyItem';
+import PropertyItem from '@/components/PropertyList/PropertyItem';
 
 describe('PropertyItem', () => {
   const property = {

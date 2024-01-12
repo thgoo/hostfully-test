@@ -11,11 +11,11 @@ const PropertyItemSkeleton: React.FC = () => {
       highlightColor={theme === 'light' ? '#c1c5cb' : '#4b5563'}
     >
       <div
-        className="group relative overflow-hidden rounded-3xl bg-gray-200 pb-12 text-sm shadow-lg transition duration-300 ease-in-out hover:shadow-xl dark:bg-gray-800"
+        className="group relative h-full overflow-hidden rounded-3xl bg-gray-200 pb-24 text-sm shadow-lg transition duration-300 ease-in-out hover:shadow-xl dark:bg-gray-800"
         data-testid="property-item-skeleton"
       >
         <div className="h-48 overflow-hidden">
-          <div className="h-48 w-full bg-cover bg-center bg-no-repeat leading-none transition duration-300 group-hover:scale-105">
+          <div className="h-48 w-full leading-none transition duration-300 group-hover:scale-105">
             <Skeleton width="100%" height="100%" borderRadius={0} />
           </div>
         </div>

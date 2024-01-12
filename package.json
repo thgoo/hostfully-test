@@ -11,12 +11,16 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.17.9",
     "dayjs": "^1.11.10",
+    "moment": "^2.30.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
     "react-loading-skeleton": "^3.3.1",
     "react-router-dom": "^6.21.1",
     "react-tailwindcss-datepicker": "^1.6.6",
+    "uuid": "^9.0.1",
     "zustand": "^4.4.7"
   },
   "devDependencies": {
@@ -25,6 +29,7 @@
     "@types/node": "^20.10.7",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
+    "@types/uuid": "^9.0.7",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",

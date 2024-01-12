@@ -7,9 +7,8 @@ export type Property = {
 };
 
 export type Booking = {
-  id: number;
+  id: string;
   propertyId: number;
   start: Date;
   end: Date;
-  guestName: string;
 };

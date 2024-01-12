@@ -1,18 +1,43 @@
+import moment from 'moment';
 import { useState } from 'react';
-import Datepicker, { DateValueType } from 'react-tailwindcss-datepicker';
+import Datepicker, {
+  DateRangeType,
+  DateValueType,
+} from 'react-tailwindcss-datepicker';
 
-const DateRange = () => {
-  const [value, setValue] = useState<DateValueType>({
-    startDate: null,
-    endDate: null,
-  });
+type Props = {
+  onChange: (value: DateValueType) => void;
+  value?: DateValueType;
+  disabledDates?: DateRangeType[];
+};
+
+const DateRange: React.FC<Props> = ({
+  onChange,
+  disabledDates,
+  value: initialValue,
+}) => {
+  const [value, setValue] = useState<DateValueType>(
+    initialValue || {
+      startDate: null,
+      endDate: null,
+    },
+  );
 
   const handleValueChange = (newValue: DateValueType) => {
-    console.log('newValue:', newValue);
     setValue(newValue);
+    onChange(newValue);
   };
 
-  return <Datepicker value={value} onChange={handleValueChange} />;
+  return (
+    <Datepicker
+      value={value}
+      onChange={handleValueChange}
+      separator="to"
+      placeholder="Select a start and end date"
+      minDate={moment().toDate()}
+      disabledDates={disabledDates}
+    />
+  );
 };
 
 export default DateRange;
