@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import { DateValueType } from 'react-tailwindcss-datepicker';
 import { Booking } from '@/types';
-import bookings from '@/mocks/bookings.json';
 import moment from 'moment';
 
 type BookingState = {
@@ -16,11 +15,7 @@ type BookingState = {
 const useBookingStore = create(
   persist<BookingState>(
     set => ({
-      bookings: bookings.map(b => ({
-        ...b,
-        start: moment(b.start).toDate(),
-        end: moment(b.end).toDate(),
-      })),
+      bookings: [],
       addBooking: booking =>
         set(state => ({
           bookings: [

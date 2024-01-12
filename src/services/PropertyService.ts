@@ -1,18 +1,21 @@
 import { Property } from '@/types';
-
-const endpoint = 'src/mocks/properties.json';
+import properties from '@/mocks/properties.json';
 
 class PropertyService {
   public getProperties(): Promise<Property[]> {
-    return fetch(endpoint)
-      .then(response => response.json())
-      .then(data => data);
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(properties);
+      });
+    });
   }
 
   public getPropertyById(id: number): Promise<Property> {
-    return fetch(endpoint)
-      .then(response => response.json())
-      .then(data => data.find((p: Property) => p.id === id));
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(properties.find((p: Property) => p.id === id) as Property);
+      });
+    });
   }
 }
 
