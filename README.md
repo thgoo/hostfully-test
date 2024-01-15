@@ -17,6 +17,7 @@ Toto get started, follow these steps:
 1. Clone the repository: `git clone git@github.com:thgoo/hostfully-test.git`
 2. Install dependencies: `yarn install`
 3. Start the development server: `yarn dev`
+4. Run tests: `yarn test`
 
 ## Libraries Used
 
@@ -28,20 +29,10 @@ This project is built using the following libraries:
 * [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs.
 * [Vitest](https://vitest.dev/) - Next Generation Testing Framework. A Vite-native testing framework.
 
-## Contributing to Project Title
-
-To contribute to <Project Title>, follow these steps:
-
-1. Fork this repository.
-2. Create a branch: `git checkout -b <branch_name>`.
-3. Make your changes and commit them: `git commit -m '<commit_message>'`
-4. Push to the original branch: `git push origin <project_name>/<location>`
-5. Create the pull request.
-
 ## Contact
 
-If you want to contact me you can reach me at `<your_email@domain.com>`.
+If you want to contact me you can reach me at `thiagoeu@gmail.com`.
 
 ## License
 
-This project uses the following license: `<license_name>`.
+This project uses the following license: `MIT`.
