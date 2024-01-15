@@ -60,6 +60,7 @@ const BookingDialog: React.FC<Props> = ({
               value={dateRange}
               onChange={handleDateChange}
               disabledDates={disabledDates}
+              direction="up"
             />
           </div>
           <div className="mt-6 flex justify-end gap-x-4">

@@ -8,7 +8,7 @@ import PropertyItemSkeleton from '@/components/PropertyList/PropertyItemSkeleton
 import useProperties from '@/hooks/useProperties';
 import useBookingStore from '@/store/booking';
 import { isPropertyAvailable } from '@/validators/booking';
-import toast from 'react-hot-toast';
+import { toast } from 'react-toastify';
 
 type Props = {
   filterBy?: DateValueType;
@@ -35,6 +35,10 @@ const PropertyList: React.FC<Props> = ({ filterBy }) => {
       });
       setSelectedProperty(undefined);
       toast.success('Booking confirmed!');
+    } else {
+      toast.error(
+        'Oops, looks like this property is not available. Please change your dates.',
+      );
     }
   };
 

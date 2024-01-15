@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import toast from 'react-hot-toast';
-import { Booking, Property } from '@/types';
+import { toast } from 'react-toastify';
+import { BookingWithProperty, Property } from '@/types';
 import useBookingStore from '@/store/booking';
 import BookingDialog from '@/components/BookingDialog/BookingDialog';
 import { DateValueType } from 'react-tailwindcss-datepicker';
-
-type BookingWithProperty = Booking & { property: Property; nights: number };
 
 type Props = {
   booking: BookingWithProperty;

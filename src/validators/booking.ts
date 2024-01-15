@@ -11,6 +11,8 @@ export function isPropertyAvailable(
     booking => booking.propertyId === property.id,
   );
 
+  if (!dateRange?.startDate || !dateRange.endDate) return false;
+
   return !propertyBookings.some(booking => {
     const bookingStartDate = booking.start;
     const bookingEndDate = booking.end;

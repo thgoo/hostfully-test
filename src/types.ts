@@ -12,3 +12,8 @@ export type Booking = {
   start: Date;
   end: Date;
 };
+
+export type BookingWithProperty = Booking & {
+  property: Property;
+  nights: number;
+};

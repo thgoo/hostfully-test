@@ -19,9 +19,8 @@ export default defineConfig({
       include: [
         'src/components',
         'src/hooks',
-        'src/pages',
         'src/services',
-        'src/store',
+        'src/validators',
       ],
       exclude: ['**/__tests__/**'],
       reportsDirectory: './src/__tests__/coverage',

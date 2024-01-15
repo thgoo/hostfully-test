@@ -9,12 +9,14 @@ type Props = {
   onChange: (value: DateValueType) => void;
   value?: DateValueType;
   disabledDates?: DateRangeType[];
+  direction?: 'up' | 'down';
 };
 
 const DateRange: React.FC<Props> = ({
   onChange,
   disabledDates,
   value: initialValue,
+  direction,
 }) => {
   const [value, setValue] = useState<DateValueType>(
     initialValue || {
@@ -36,6 +38,7 @@ const DateRange: React.FC<Props> = ({
       placeholder="Select a start and end date"
       minDate={moment().toDate()}
       disabledDates={disabledDates}
+      popoverDirection={direction}
     />
   );
 };
