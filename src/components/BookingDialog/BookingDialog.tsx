@@ -35,7 +35,7 @@ const BookingDialog: React.FC<Props> = ({
   };
 
   return (
-    <div className="fixed left-0 top-0 z-10 flex h-dvh w-dvw items-center justify-center bg-slate-800 bg-opacity-80">
+    <div className="fixed left-0 top-0 z-10 flex h-dvh w-dvw items-center justify-center overflow-y-auto bg-slate-800 bg-opacity-80">
       <div className="w-4/5 rounded-xl bg-gray-100 shadow-lg md:w-[488px] dark:bg-gray-800">
         <div
           className="h-48 w-full rounded-t-xl bg-cover bg-center bg-no-repeat md:h-72"
@@ -60,18 +60,18 @@ const BookingDialog: React.FC<Props> = ({
               value={dateRange}
               onChange={handleDateChange}
               disabledDates={disabledDates}
-              direction="up"
+              direction="down"
             />
           </div>
           <div className="mt-6 flex justify-end gap-x-4">
             <button
-              className="h-8 rounded bg-green-800 px-4 text-white hover:bg-green-900"
+              className="h-8 rounded bg-green-500 px-4 text-white hover:bg-green-600"
               onClick={() => onConfirm(property, selectedDates)}
             >
               Confirm
             </button>
             <button
-              className="h-8 rounded bg-red-800 px-4 text-white hover:bg-red-900"
+              className="h-8 rounded bg-red-500 px-4 text-white hover:bg-red-600"
               onClick={onCancel}
             >
               Cancel
