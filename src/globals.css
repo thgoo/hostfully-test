@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@supports (animation-timeline: scroll()) {
+  .scroll-shadow {
+    animation: scroll-shadow linear both;
+    animation-timeline: scroll();
+    animation-range: 0ex 5ex;
+  }
+
+  @keyframes scroll-shadow {
+    from {
+      box-shadow: none;
+    }
+
+    to {
+      box-shadow: hsla(0 0% 0% / 0.1) 0 0.5rem 1rem;
+    }
+  }
+}

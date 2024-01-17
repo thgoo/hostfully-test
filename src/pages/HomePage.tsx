@@ -11,22 +11,27 @@ const HomePage = () => {
   };
 
   return (
-    <Page>
-      <div className="mx-auto mb-6 w-96">
-        <DateRange onChange={handleDateRangeChange} />
-      </div>
-      {!selectedDates?.endDate || !selectedDates?.startDate ? (
-        <p className="mt-20 text-center text-5xl font-thin">
-          Select the dates to start.
-        </p>
-      ) : (
-        <>
-          <p className="mb-4 text-center text-3xl font-thin">
-            Showing properties for the selected dates.
+    <Page
+      header={
+        <div className="mx-auto w-96">
+          <DateRange onChange={handleDateRangeChange} />
+        </div>
+      }
+    >
+      <>
+        {!selectedDates?.endDate || !selectedDates?.startDate ? (
+          <p className="mt-20 text-center text-5xl font-thin">
+            Select the dates to start.
           </p>
-          <PropertyList filterBy={selectedDates} />
-        </>
-      )}
+        ) : (
+          <>
+            <p className="mb-6 text-center text-3xl font-thin">
+              Showing properties for the selected dates.
+            </p>
+            <PropertyList filterBy={selectedDates} />
+          </>
+        )}
+      </>
     </Page>
   );
 };
